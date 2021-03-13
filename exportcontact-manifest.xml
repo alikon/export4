@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>Export Contact Extension Package</name>
+		<description>Joomla! CMS Export Contact Package</description>
+		<element>plg_export_contact</element>
+		<type>plugin</type>
+		<version>1.0.0</version>
+		<client>site</client>
+		<infourl title="Export Contact Extension Package">https://github.com/alikon/export4/releases/tag/1.0.0<</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://raw.githubusercontent.com/alikon/export4/zip/plg_export_contact-1.0.0.zip</downloadurl>
+		</downloads>
+		<targetplatform name="joomla" version="3.[6789]" />
+	</update>
+</updates>
