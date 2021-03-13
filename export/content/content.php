@@ -1,9 +1,9 @@
 <?php
 /**
  * @package     Joomla.Plugin
- * @subpackage  Job.jobone
+ * @subpackage  export.content
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2021 Alikon, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -16,11 +16,11 @@ use Joomla\CMS\Router\Route;
 use Joomla\Registry\Registry;
 
 /**
- * Joomla! Job One plugin
+ * Joomla! Export Content plugin
  *
- * An example for a job plugin
+ * An export content plugin
  *
- * @since  __DEPLOY_VERSION__
+ * @since  3.9
  */
 class PlgExportContent extends CMSPlugin
 {
@@ -36,7 +36,7 @@ class PlgExportContent extends CMSPlugin
 	 * Application object.
 	 *
 	 * @var    ApplicationCms
-	 * @since  __DEPLOY_VERSION__
+	 * @since  3.9
 	 */
 	protected $app;
 
@@ -44,7 +44,7 @@ class PlgExportContent extends CMSPlugin
 	 * Database object.
 	 *
 	 * @var    DatabaseDriver
-	 * @since  __DEPLOY_VERSION__
+	 * @since  3.9
 	 */
 	protected $db;
 
@@ -52,7 +52,7 @@ class PlgExportContent extends CMSPlugin
 	 * URL to get the data.
 	 *
 	 * @var    string
-	 * @since  3.5
+	 * @since  3.9
 	 */
 	protected $getUrl = '';
 
@@ -60,7 +60,7 @@ class PlgExportContent extends CMSPlugin
 	 * URL to send the data.
 	 *
 	 * @var    string
-	 * @since  3.5
+	 * @since  3.9
 	 */
 	protected $postUrl = '';
 
@@ -87,7 +87,6 @@ class PlgExportContent extends CMSPlugin
 		$item->catid = $this->params->get('catid');
 		unset($item->created_by);
 
-		//var_dump($item);exit();
 		try
 		{
 			$response = $this->sendData($item);
@@ -114,7 +113,7 @@ class PlgExportContent extends CMSPlugin
 	 *
 	 * @return  boolean
 	 *
-	 * @since   3.5
+	 * @since   3.9
 	 *
 	 * @throws  RuntimeException  If there is an error sending the data.
 	 */
@@ -140,7 +139,7 @@ class PlgExportContent extends CMSPlugin
 	 *
 	 * @return  boolean
 	 *
-	 * @since   3.5
+	 * @since   3.9
 	 *
 	 * @throws  RuntimeException  If there is an error sending the data.
 	 */
