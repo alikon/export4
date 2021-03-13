@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="export" method="upgrade">
+	<name>plg_export_contact</name>
+	<author>Alikon</author>
+	<creationDate>May 2021</creationDate>
+	<copyright>Copyright (C) 2021 Alikon. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>nicola.galgano@community.joomla.org</authorEmail>
+	<authorUrl>www.alikonweb.it</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_EXPORT_CONTACT_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="contact">contact.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_export_contact.ini</language>
+		<language tag="en-GB">en-GB.plg_export_contact.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="url"
+					type="text"
+					label="PLG_EXPORT_CONTACT_URL_LABEL"
+					description="PLG_EXPORT_CONTACT_URL_DESC"
+				/>
+				<field
+					name="key"
+					type="text"
+					label="PLG_EXPORT_CONTACT_KEY_LABEL"
+					description="PLG_EXPORT_CONTACT_KEY_DESC"
+				/>
+				<field
+					name="catid"
+					type="number"
+					label="PLG_EXPORT_CONTACT_CATID_LABEL"
+					description="PLG_EXPORT_CONTACT_CATID_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" name="Export Contact Update Site">https://raw.githubusercontent.com/alikon/export4/main/exportcontact-manifest.xml</server>
+	</updateservers>
+</extension>

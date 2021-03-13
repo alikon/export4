@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="export" method="upgrade">
+	<name>plg_export_tag</name>
+	<author>Joomla! Project</author>
+	<creationDate>May 2021</creationDate>
+	<copyright>Copyright (C) 2021 Alikon. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>nicola.galgano@community.joomla.org</authorEmail>
+	<authorUrl>www.alikonweb.it</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_EXPORT_TAG_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="tag">tag.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_export_tag.ini</language>
+		<language tag="en-GB">en-GB.plg_export_tag.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="url"
+					type="text"
+					label="PLG_EXPORT_TAG_URL_LABEL"
+					description="PLG_EXPORT_TAG_URL_DESC"
+				/>
+				<field
+					name="key"
+					type="text"
+					label="PLG_EXPORT_TAG_KEY_LABEL"
+					description="PLG_EXPORT_TAG_KEY_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
