@@ -69,7 +69,6 @@ class PlgExportContact extends CMSPlugin
 		$id  = $this->app->input->get('id');
 		$ext  = $this->app->input->get('ext');
 		$domain = $this->params->get('url', 'http://localhost');
-		$key = $this->params->get('key');
 		$endpoint = '/api/index.php/v1/contact';
 		$this->serverUrl = $domain . $endpoint;
 
@@ -129,8 +128,6 @@ class PlgExportContact extends CMSPlugin
 		$options->set('Content-Type', 'application/json');
 		$headers = array('Authorization' => 'Bearer ' . $this->params->get('key'));
 
-		$response = HttpFactory::getHttp($options)->post($this->serverUrl, $content, $headers, 2);
-
-		return $response;
+		return HttpFactory::getHttp($options)->post($this->serverUrl, $content, $headers, 2);
 	}
 }
