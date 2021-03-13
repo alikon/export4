@@ -34,4 +34,7 @@
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" name="Export Tag Update Site">https://raw.githubusercontent.com/alikon/export4/main/exporttag-manifest.xml</server>
+	</updateservers>
 </extension>
