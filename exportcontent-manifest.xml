@@ -2,7 +2,7 @@
 <updates>
 	<update>
 		<name>Export Content Extension Package</name>
-		<description>Joomla! CMS Export Button Package</description>
+		<description>Joomla! CMS Export Content Package</description>
 		<element>plg_export_content</element>
 		<type>plugin</type>
 		<version>1.0.0</version>
