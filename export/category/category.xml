@@ -34,4 +34,7 @@
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" name="Export Category Update Site">https://raw.githubusercontent.com/alikon/export4/main/exportcategory-manifest.xml</server>
+	</updateservers>
 </extension>
