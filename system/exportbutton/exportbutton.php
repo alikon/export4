@@ -45,9 +45,6 @@ class PlgSystemExportbutton extends CMSPlugin
 	 */
 	public function onBeforeRender()
 	{
-		// Get the application object
-		//$app = JFactory::getApplication();
-
 		// Run in backend
 		if ($this->app->isAdmin() === true)
 		{
