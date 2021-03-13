@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>Export Tag Extension Package</name>
+		<description>Joomla! CMS Export Tag Package</description>
+		<element>plg_export_tag</element>
+		<type>plugin</type>
+		<version>1.0.0</version>
+		<client>site</client>
+		<infourl title="Export Tag Extension Package">https://github.com/alikon/export4/releases/tag/1.0.0<</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://raw.githubusercontent.com/alikon/export4/zip/plg_export_tag-1.0.0.zip</downloadurl>
+		</downloads>
+		<targetplatform name="joomla" version="3.[6789]" />
+	</update>
+</updates>
