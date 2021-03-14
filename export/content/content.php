@@ -131,7 +131,7 @@ class PlgExportContent extends CMSPlugin
 		$options->set('Content-Type', 'application/json');
 		$headers = array('Authorization' => 'Bearer ' . $this->params->get('key'));
 
-		return  HttpFactory::getHttp($options)->post($this->postUrl, $content, $headers, 2);
+		return  HttpFactory::getHttp($options)->post($this->postUrl, $content, $headers, 3);
 	}
 
 	/**
@@ -150,6 +150,6 @@ class PlgExportContent extends CMSPlugin
 		$headers = array('Authorization' => 'Bearer ' . $this->params->get('key'));
 
 		// Don't let the request take longer than 2 seconds to avoid page timeout issues
-		return HttpFactory::getHttp($options)->get($this->getUrl . '/categories/'. $catid, $headers, 2);
+		return HttpFactory::getHttp($options)->get($this->getUrl . '/categories/'. $catid, $headers, 3);
 	}
 }
