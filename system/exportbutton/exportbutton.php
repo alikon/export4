@@ -12,9 +12,11 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Toolbar\Toolbar;
 
 /**
- * Garbage collection handler for session related data
+ * Add a button to post a webservice
  *
  * @since  3.8.6
  */
@@ -37,9 +39,9 @@ class PlgSystemExportbutton extends CMSPlugin
 	protected $db;
 
 	/**
-	 * First step to enter the sampledata. Content.
+	 * Render the button.
 	 *
-	 * @return  array or void  Will be converted into the JSON response to the module.
+	 * @return  void
 	 *
 	 * @since  3.8.0
 	 */
@@ -52,7 +54,7 @@ class PlgSystemExportbutton extends CMSPlugin
 			$input = $this->app->input;
 
 			// Get an instance of the Toolbar
-			$toolbar = JToolbar::getInstance('toolbar');
+			$toolbar = Toolbar::getInstance('toolbar');
 			
 			// Append button on Article
 			if ($input->getCmd('option') === 'com_content' && $input->getCmd('view') === 'article')
@@ -60,7 +62,7 @@ class PlgSystemExportbutton extends CMSPlugin
 				$id = $input->get('id');
 
 				// Add your custom button here
-				$url = JRoute::_('index.php?option=com_ajax&group=export&plugin=content&format=json&id=' . $id);
+				$url = Route::_('index.php?option=com_ajax&group=export&plugin=content&format=json&id=' . $id);
 				$toolbar->appendButton('Link', 'download', 'Export', $url);
 			}
 
@@ -71,7 +73,7 @@ class PlgSystemExportbutton extends CMSPlugin
 				$extension = str_replace('com_', '', $input->getCmd('extension'));
 
 				// Add your custom button here
-				$url = JRoute::_('index.php?option=com_ajax&group=export&plugin=category&format=json&id=' . $id . '&ext=' . $extension);
+				$url = Route::_('index.php?option=com_ajax&group=export&plugin=category&format=json&id=' . $id . '&ext=' . $extension);
 				$toolbar->appendButton('Link', 'download', 'Export', $url);
 			}
 
@@ -81,7 +83,7 @@ class PlgSystemExportbutton extends CMSPlugin
 				$id = $input->get('id');
 
 				// Add your custom button here
-				$url = JRoute::_('index.php?option=com_ajax&group=export&plugin=contact&format=json&id=' . $id);
+				$url = Route::_('index.php?option=com_ajax&group=export&plugin=contact&format=json&id=' . $id);
 				$toolbar->appendButton('Link', 'download', 'Export', $url);
 			}
 
@@ -91,7 +93,7 @@ class PlgSystemExportbutton extends CMSPlugin
 				$id = $input->get('id');
 
 				// Add your custom button here
-				$url = JRoute::_('index.php?option=com_ajax&group=export&plugin=tag&format=json&id=' . $id);
+				$url = Route::_('index.php?option=com_ajax&group=export&plugin=tag&format=json&id=' . $id);
 				$toolbar->appendButton('Link', 'download', 'Export', $url);
 			}
 		}
