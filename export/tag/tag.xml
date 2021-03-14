@@ -24,12 +24,14 @@
 					type="text"
 					label="PLG_EXPORT_TAG_URL_LABEL"
 					description="PLG_EXPORT_TAG_URL_DESC"
+					required="true"
 				/>
 				<field
 					name="key"
 					type="text"
 					label="PLG_EXPORT_TAG_KEY_LABEL"
 					description="PLG_EXPORT_TAG_KEY_DESC"
+					required="true"
 				/>
 			</fieldset>
 		</fields>

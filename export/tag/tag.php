@@ -11,9 +11,8 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Http\HttpFactory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Log\Log;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Router\Route;
 use Joomla\Registry\Registry;
 
 /**
@@ -96,10 +95,10 @@ class PlgExportTag extends CMSPlugin
 		{
 			$data = json_decode($response->body);
 
-			$this->app->redirect(JRoute::_('index.php?option=com_tags&view=tag&layout=edit&id=' . $id, false), $response->code . ' - ' . $data->errors[0]->title, 'error');
+			$this->app->redirect(Route::_('index.php?option=com_tags&view=tag&layout=edit&id=' . $id, false), $response->code . ' - ' . $data->errors[0]->title, 'error');
 		}
 
-		$this->app->redirect(JRoute::_('index.php?option=com_tags&layout=edit&id=' . $id), 'Exported', 'success');
+		$this->app->redirect(Route::_('index.php?option=com_tags&view=tag&layout=edit&id=' . $id, false), 'Exported', 'success');
 
 	}
 
@@ -119,7 +118,7 @@ class PlgExportTag extends CMSPlugin
 		$options->set('Content-Type', 'application/json');
 		$headers = array('Authorization' => 'Bearer ' . $this->params->get('key'));
 
-		return  HttpFactory::getHttp($options)->post($this->postUrl, $content, $headers, 2);
+		return  HttpFactory::getHttp($options)->post($this->serverUrl, $content, $headers, 2);
 	}
 
 }
