@@ -3,7 +3,7 @@
  * @package     Joomla.Plugin
  * @subpackage  Export.contact
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2021 Alikon. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -11,10 +11,9 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Http\HttpFactory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Log\Log;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Registry\Registry;
+use Joomla\CMS\Router\Route;
 
 /**
  * Joomla! Job One plugin
@@ -88,10 +87,10 @@ class PlgExportContact extends CMSPlugin
 		{
 			$data = json_decode($response->body);
 
-			$this->app->redirect(JRoute::_('index.php?option=com_contact&view=contact&layout=edit&id=' . $id, false), $response->code . ' - ' . $data->errors[0]->title, 'error');
+			$this->app->redirect(Route::_('index.php?option=com_contact&view=contact&layout=edit&id=' . $id, false), $response->code . ' - ' . $data->errors[0]->title, 'error');
 		}
 
-		$this->app->redirect(JRoute::_('index.php?option=com_contact&view=contact&layout=edit&id=' . $id, false), 'Exported', 'success');
+		$this->app->redirect(Route::_('index.php?option=com_contact&view=contact&layout=edit&id=' . $id, false), 'Exported', 'success');
 
 	}
 

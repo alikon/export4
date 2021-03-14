@@ -24,18 +24,21 @@
 					type="text"
 					label="PLG_EXPORT_CONTACT_URL_LABEL"
 					description="PLG_EXPORT_CONTACT_URL_DESC"
+					required="true"
 				/>
 				<field
 					name="key"
 					type="text"
 					label="PLG_EXPORT_CONTACT_KEY_LABEL"
 					description="PLG_EXPORT_CONTACT_KEY_DESC"
+					required="true"
 				/>
 				<field
 					name="catid"
 					type="number"
 					label="PLG_EXPORT_CONTACT_CATID_LABEL"
 					description="PLG_EXPORT_CONTACT_CATID_DESC"
+					required="true"
 				/>
 			</fieldset>
 		</fields>
