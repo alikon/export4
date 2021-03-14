@@ -3,7 +3,7 @@
  * @package     Joomla.Plugin
  * @subpackage  Export.category
  *
- * @copyright   Copyright (C) 2005 - 2020 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2021 Alikon. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -11,10 +11,9 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Http\HttpFactory;
 use Joomla\CMS\Language\Text;
-use Joomla\CMS\Log\Log;
 use Joomla\CMS\Plugin\CMSPlugin;
-use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Registry\Registry;
+use Joomla\CMS\Router\Route;
 
 /**
  * Joomla! Job One plugin
@@ -87,8 +86,6 @@ class PlgExportCategory extends CMSPlugin
 		$item->params->merge($registry);
 		unset($item->created_user_id);
 
-		$content = json_encode($item);
-
 		try
 		{
 			$response = $this->sendData($item);
@@ -103,10 +100,10 @@ class PlgExportCategory extends CMSPlugin
 		{
 			$data = json_decode($response->body);
 
-			$this->app->redirect(JRoute::_('index.php?option=com_categories&view=category&layout=edit&id=' . $id . '&extension=com_' . $ext, false), $response->code . ' - ' . $data->errors[0]->title, 'error');
+			$this->app->redirect(Route::_('index.php?option=com_categories&view=category&layout=edit&id=' . $id . '&extension=com_' . $ext, false), $response->code . ' - ' . $data->errors[0]->title, 'error');
 		}
 
-		$this->app->redirect(JRoute::_('index.php?option=com_categories&view=category&layout=edit&id=' . $id . '&extension=com_' . $ext, false), 'Exported', 'success');
+		$this->app->redirect(Route::_('index.php?option=com_categories&view=category&layout=edit&id=' . $id . '&extension=com_' . $ext, false), 'Exported', 'success');
 
 	}
 
@@ -126,6 +123,6 @@ class PlgExportCategory extends CMSPlugin
 		$options->set('Content-Type', 'application/json');
 		$headers = array('Authorization' => 'Bearer ' . $this->params->get('key'));
 
-		return  HttpFactory::getHttp($options)->post($this->postUrl, $content, $headers, 2);
+		return  HttpFactory::getHttp($options)->post($this->serverUrl, $content, $headers, 2);
 	}
 }
