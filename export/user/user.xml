@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="export" method="upgrade">
+	<name>plg_export_user</name>
+	<author>Joomla! Project</author>
+	<creationDate>May 2021</creationDate>
+	<copyright>Copyright (C) 2021 Alikon. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.alikonweb.it</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_EXPORT_USER_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="user">user.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_export_user.ini</language>
+		<language tag="en-GB">en-GB.plg_export_user.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="url"
+					type="text"
+					label="PLG_EXPORT_USER_URL_LABEL"
+					description="PLG_EXPORT_USER_URL_DESC"
+					required="true"
+				/>
+				<field
+					name="key"
+					type="text"
+					label="PLG_EXPORT_USER_KEY_LABEL"
+					description="PLG_EXPORT_USER_KEY_DESC"
+					required="true"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" name="Export User Update Site">https://raw.githubusercontent.com/alikon/export4/main/exportuser-manifest.xml</server>
+	</updateservers>
+</extension>
